@@ -1,0 +1,10 @@
+spring:
+  data:
+    cassandra:
+      port: 9042
+#      table1:
+#        contact-point: localhost
+#        keyspace-name: database
+#      table2:
+      contact-point: localhost
+      keyspace-name: spending
