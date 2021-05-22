@@ -1,0 +1,29 @@
+syntax="proto3";
+
+option java_multiple_files = true;
+package minh.project.spending.grpc;
+import "google/protobuf/empty.proto";
+
+service Evaluate{
+  rpc GetYearSpending(Source) returns(Infos);
+  rpc GetTable(Source) returns(Infos);
+  rpc SendTable(Infos) returns(google.protobuf.Empty);
+}
+
+
+
+message Info{
+  int32 id=1;
+  string date=2;
+  string name=3;
+  int32 price=4;
+}
+
+message Infos{
+  repeated Info infos=1;
+}
+
+message Source{
+  string tableName=1;
+  int32 num=2;
+}
